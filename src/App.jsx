@@ -3,13 +3,18 @@ import './App.css'
 import Navbar from "./components/navbar/Navbar";
 import Home from "./components/home/Home";
 import Footer from "./components/footer/Footer";
+import Login from "./components/Login";
+import Formulario from "./components/Formulario";
 
 function App() {
 
   return  (
     <div className='App'>
     <Navbar />
-    <Home />
+
+   {/* <Home /> */}
+
+   <Login/>
     <Footer />
     </div>
 
