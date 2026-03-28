@@ -9,7 +9,11 @@ return (
     <p className="card-text text-center">
         <strong>Ingredientes</strong>
     </p>
-    <p className="card-text text-center mb-4"> {ingredients.join(',')}</p>
+    <ul className="card-text text-center mb-4 list-unstyled">
+        {ingredients.map((ingrediente, index) => (
+        <li key={index}>{ingrediente}</li>
+        ))}
+    </ul>
     <hr />
 
     <h5 className="text-center mb-3"> Precio:${price}</h5>

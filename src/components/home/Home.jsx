@@ -1,15 +1,34 @@
 import React from "react";
 import Header from "../header/Header.jsx";
 import CardPizza from "../cardPizza/CardPizza.jsx";
+import {pizzas} from "../../assets/pizzas.js";
 
-export const Home = () => {
+const Home = () => {
 return (
     <div>
     <Header/>
     
     <div className="container mt-5 mb-5">
     <div className="row g-4">
-        <div className="col-md-4">
+    
+{pizzas.map((pizza) => (
+    <div className="col-md-4" key={pizza.id}>
+        <CardPizza
+        name={pizza.name}
+        price={pizza.price}
+        ingredients={pizza.ingredients}
+        img={pizza.img}
+        /> 
+    </div>
+))}
+
+
+
+
+
+
+
+{/*<div className="col-md-4">
     <CardPizza
     name="Napolitana"
     price={5950}
@@ -33,7 +52,7 @@ return (
     ingredients={["mozzarella","pepperoni","orégano"]}
     img="https://media.istockphoto.com/id/1442417585/es/foto/persona-recibiendo-un-pedazo-de-pizza-de-pepperoni-con-queso.webp?s=1024x1024&w=is&k=20&c=okpgZ7WhSGy-697KHu_dT5N8dfYatJ7VWHouPzGmGBs="
     />
-</div>
+</div>*/}
     
     </div>
     </div>

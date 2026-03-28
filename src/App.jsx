@@ -5,6 +5,7 @@ import Home from "./components/home/Home";
 import Footer from "./components/footer/Footer";
 import Login from "./components/Login";
 import Formulario from "./components/Formulario";
+import Cart from "./components/cart/Cart";
 
 function App() {
 
@@ -12,13 +13,14 @@ function App() {
     <div className='App'>
     <Navbar />
 
-   {/* <Home /> */}
+  {/*<Home/>*/}
+  {/*<Login/>*/}
 
-   <Login/>
-    <Footer />
+  <Cart/>
+  <Footer/>
     </div>
 
   );
 }
 
-export default App
+export default App;
