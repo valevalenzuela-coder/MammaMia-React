@@ -6,6 +6,7 @@ import Footer from "./components/footer/Footer";
 import Login from "./components/Login";
 import Formulario from "./components/Formulario";
 import Cart from "./components/cart/Cart";
+import Pizza from "./components/pizza/Pizza";
 
 function App() {
 
@@ -13,10 +14,11 @@ function App() {
     <div className='App'>
     <Navbar />
 
-  {/*<Home/>*/}
+  <Home/>*
   {/*<Login/>*/}
+  {/*<Cart/>*/}
 
-  <Cart/>
+  <Pizza/>
   <Footer/>
     </div>
 

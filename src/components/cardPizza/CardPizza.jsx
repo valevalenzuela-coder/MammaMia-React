@@ -2,7 +2,16 @@
 export const CardPizza = ({name,price,ingredients,img}) => {
 return (
     <div className="card h-100 shadow-sm">
-    <img src={img} className="card-img-top" alt={`Pizza ${name}`} />
+    <img 
+    src={img}
+    className="card-img-top" 
+    alt={`Pizza ${name}`} 
+    crossOrigin="anonymous"
+    onError={(e) => {
+    e.target.src= "https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1000";
+    }}
+    />
+
     <div className="card-body">
     <h4 className="card-title">Pizzeria MamaMia {name}</h4>
     <hr />
@@ -10,7 +19,7 @@ return (
         <strong>Ingredientes</strong>
     </p>
     <ul className="card-text text-center mb-4 list-unstyled">
-        {ingredients.map((ingrediente, index) => (
+        {ingredients?.map((ingrediente, index) => (
         <li key={index}>{ingrediente}</li>
         ))}
     </ul>
