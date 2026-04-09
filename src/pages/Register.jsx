@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-const Formulario= () => {
-    const [email, setEmail]= useState(" ");
-    const [password, setPassword]= useState(" ");
-    const [confirmPassword, setConfirmPassword]= useState(" ");
+const Register= () => {
+    const [email, setEmail]= useState("");
+    const [password, setPassword]= useState("");
+    const [confirmPassword, setConfirmPassword]= useState("");
 
-    const validarDatos = (e)
-    e.preventDefault(); {
+    const validarDatos = (e) => {
+    e.preventDefault(); 
  
     if (!email.trim() || !password.trim() || !confirmPassword.trim()) {
         alert("ERROR: todos los campos son obligatorios");
@@ -29,7 +29,7 @@ const Formulario= () => {
 return(
     <div className="container mt-5">
     <h1 className="text-center">Iniciar Sesión</h1>
-    <form className="mx-auto" style={{maxWidth:"400px"}} onSubmit={validarLogin}>
+    <form className="mx-auto" style={{maxWidth:"400px"}} onSubmit={validarDatos}>
     <div className="form-group mb-3">
     <label className="form-label">Email</label>
     <input 
@@ -48,7 +48,17 @@ return(
     onChange={(e) => setPassword(e.target.value)}
     value={password}
     />
-    </div>
+    </div >  
+     
+     <div className="form-group mb-3">
+    <label className="form-label">Confirmar Contraseña</label>
+    <input 
+    type="password" 
+    className="form-control"
+    placeholder="Repite Contraseña"
+    onChange={(e) => setConfirmPassword(e.target.value)}
+    />
+     </div>
 
     <button type="submit" className="btn btn-primary w-100">Ingresr</button>    
     </form>
@@ -57,4 +67,4 @@ return(
 );
 };
 
-export default Formulario;
+export default Register;
