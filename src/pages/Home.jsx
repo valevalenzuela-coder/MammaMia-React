@@ -1,9 +1,11 @@
 import React from "react";
+import { useContext } from "react";
+import { CartContexto } from "../context/CartContext.jsx";
 import Header from "../components/header/Header.jsx";
 import CardPizza from "../components/cardPizza/CardPizza.jsx";
-import {pizzas} from "../assets/pizzas"
 
 const Home = () => {
+    const {pizzasApi} = useContext(CartContexto);
   
 return (
     <div>
@@ -12,9 +14,11 @@ return (
     <div className="container mt-5 mb-5">
     <div className="row g-4">
     
-{pizzas.map((pizza) => (
+{pizzasApi.map((pizza) => (
     <div className="col-md-4" key={pizza.id}>
+
         <CardPizza
+        pizza={pizza}
         name={pizza.name}
         price={pizza.price}
         ingredients={pizza.ingredients}

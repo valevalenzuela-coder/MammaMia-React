@@ -1,6 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
+import { ProveedorContexto } from './context/CartContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
+
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 
@@ -17,6 +19,7 @@ import NotFound from "./pages/NotFound";
 function App() {
 
   return  (
+  <ProveedorContexto>
     <div className='App'>
    
     <Navbar />
@@ -33,6 +36,7 @@ function App() {
   <Footer/>
   
     </div>
+  </ProveedorContexto>
 
   );
 }

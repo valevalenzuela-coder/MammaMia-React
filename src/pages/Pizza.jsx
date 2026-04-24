@@ -1,5 +1,5 @@
 import React from "react";
-import { pizzas } from "../assets/pizzas"; 
+import { pizzas } from "../assets/pizzas.js"; 
 
 const Pizza = () => {
     const pizza = pizza[0];

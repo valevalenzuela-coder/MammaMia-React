@@ -1,5 +1,9 @@
+import React, {useContext} from "react";
+import { CartContexto } from "../../context/CartContext";
 
-export const CardPizza = ({name,price,ingredients,img}) => {
+export const CardPizza = ({name,price,ingredients,img, pizza}) => {
+const {añadirCart} = useContext(CartContexto);
+
 return (
     <div className="card h-100 shadow-sm">
     <img 
@@ -25,10 +29,17 @@ return (
     </ul>
     <hr />
 
-    <h5 className="text-center mb-3"> Precio:${price}</h5>
+    <h5 className="text-center mb-3"> Precio:${price.toLocaleString('es-CL')}</h5>
+
     <div className="mt-auto d-flex justify-content-around">
         <button className="btn btn-outline-dark">Ver más</button>
-        <button className="btn btn-dark">Añadir</button>
+
+        <button 
+        className="btn btn-dark"
+        onClick ={() => añadirCart(pizza)}
+        >
+            Añadir 
+        </button>
         </div>
     </div>
     </div>

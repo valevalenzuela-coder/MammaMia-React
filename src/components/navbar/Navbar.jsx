@@ -1,11 +1,12 @@
-import React, {useState} from 'react';
+import React, {useContext} from 'react';
+import { CartContexto } from '../../context/CartContext';
 import {Link} from "react-router-dom";
 
 
 const Navbar = () => { 
-const total= 25000;
-const token= false;
-const formatNumber= (num) => num.toLocaleString('es-CL');
+const {precioTotal} = useContext(CartContexto);
+const token =false;
+const formatNumber = (num) => num.toLocaleString('es-CL');
 
 return (
 <nav className="navbar navbar-expand-lg navbar-dark bg-dark" >
@@ -44,7 +45,7 @@ return (
 
         <div className="navbar-nav">
             <Link to="/cart" className="btn btn-outline-info"> 
-            Total: ${formatNumber(total)}
+            Total: ${formatNumber(precioTotal)}
             </Link>
         
         </div>
